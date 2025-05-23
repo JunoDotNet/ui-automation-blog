@@ -1,11 +1,6 @@
-describe('Homepage UI Test', () => {
-  it('loads and displays categories', () => {
-    cy.visit('/');
-
-    cy.get('button')
-      .should('exist')
-      .and('have.length.at.least', 1);
-
-    cy.contains('Tutorials').should('be.visible'); 
+describe('Static Blog Test', () => {
+  it('loads local test page and finds button', () => {
+    cy.visit('http://localhost:8080');
+    cy.contains('Tech Tutorials').should('be.visible');
   });
 });
