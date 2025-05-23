@@ -1,0 +1,23 @@
+{
+  "name": "ui-automation-blog",
+  "version": "1.0.0",
+  "description": "UI automation tests for my personal blog using Cypress",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "cypress run",
+    "cypress:open": "cypress open"
+  },
+  "keywords": [
+    "QA",
+    "Cypress",
+    "UI Testing",
+    "Automation",
+    "Blog"
+  ],
+  "author": "Jon Wickerd",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "cypress": "^14.4.0"
+  }
+}
