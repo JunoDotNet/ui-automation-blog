@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "",
+		"name": "jonwithablog_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "",
+		"_collection_link": "https://jonwickerd.postman.co/workspace/Jon-Wickerd's-Workspace~/collection/"
+	},
+	"item": [
+		{
+			"name": "Get Blog Posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is under 500ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Contains blog posts\", function () {\r",
+							"  const json = pm.response.json();\r",
+							"  pm.expect(json.items.length).to.be.above(0);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdn.contentful.com/spaces/gnid317kmek6/environments/master/entries?access_token=content_type=&order=-fields.publishDate\n",
+					"protocol": "https",
+					"host": [
+						"cdn",
+						"contentful",
+						"com"
+					],
+					"path": [
+						"spaces",
+						"",
+						"environments",
+						"master",
+						"entries"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": ""
+						},
+						{
+							"key": "content_type",
+							"value": ""
+						},
+						{
+							"key": "order",
+							"value": "-fields.publishDate\n"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
